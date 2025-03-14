@@ -1,0 +1,15 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 200px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    margin-top: 10px;
+}
