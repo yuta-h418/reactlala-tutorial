@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 10px;
     width: 200px;
+    margin: 20px;
 }
 
 label {

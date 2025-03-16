@@ -1,0 +1,44 @@
+/* book-list: カードを3列に並べる */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 3列まで表示 */
+    gap: 16px; /* カード間の間隔 */
+    padding: 16px;
+}
+
+/* book-card: カードのスタイル */
+.book-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* book-card の入力フォーム */
+.book-card input {
+    margin: 5px 0;
+    padding: 8px;
+    width: 90%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* book-card のボタン */
+.book-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.book-card button:hover {
+    background-color: #0056b3;
+}
