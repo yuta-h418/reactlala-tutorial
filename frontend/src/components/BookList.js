@@ -8,7 +8,6 @@ const BookList = ({ books, deleteBook, updateBook }) => {
   const [editBookId, setEditBookId] = useState(null);
   const [updatedBooks, setUpdatedBooks] = useState([]);
 
-  // booksの変更を監視して、updatedBooksを更新
   useEffect(() => {
     setUpdatedBooks(books);
   }, [books]);
@@ -25,6 +24,13 @@ const BookList = ({ books, deleteBook, updateBook }) => {
     setUpdatedBooks(updatedBooks.map(book => 
       book.id === id ? { ...book, title: editTitle, author: editAuthor } : book
     ));
+    setIsEditing(false);
+    setEditBookId(null);
+    setEditTitle("");
+    setEditAuthor("");
+  };
+
+  const cancelEdit = () => {
     setIsEditing(false);
     setEditBookId(null);
     setEditTitle("");
@@ -48,8 +54,11 @@ const BookList = ({ books, deleteBook, updateBook }) => {
                   value={editAuthor}
                   onChange={(e) => setEditAuthor(e.target.value)}
                 />
-                <button onClick={() => handleUpdate(book.id)}>更新</button>
-                <button onClick={() => deleteBook(book.id)}>削除</button>
+                <div className="card-btn">
+                  <button onClick={() => handleUpdate(book.id)}>更新</button>
+                  <button onClick={() => deleteBook(book.id)}>削除</button>
+                  <button onClick={cancelEdit}>キャンセル</button>
+                </div>
               </>
             ) : (
               <>
